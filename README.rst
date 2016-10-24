@@ -1,3 +1,7 @@
+.. image:: https://badge.fury.io/py/CloudSearch-Logger.svg
+    :target: https://pypi.python.org/pypi/CloudSearch-Logger
+    :alt: PyPI Version
+
 CloudSearch-Logger
 ==================
 This module helps you in logging data on amazon cloudsearch server using python logger.
