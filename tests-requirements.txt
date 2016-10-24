@@ -1,0 +1,3 @@
+mock==1.0.1
+testscenarios==0.2
+testtools==0.9.34
