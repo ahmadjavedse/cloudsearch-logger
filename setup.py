@@ -7,7 +7,7 @@ import pip
 from setuptools import setup, find_packages
 
 REQUIREMENTS_FILE_PATH = 'requirements.txt'
-TESTS_REQUIREMENTS_FILE_PATH = 'test-requirements.txt'
+TESTS_REQUIREMENTS_FILE_PATH = 'tests-requirements.txt'
 LINKS = []  # for repo urls (dependency_links)
 REQUIRES = []  # for package names
 TESTS_REQUIRES = []  # for package names
