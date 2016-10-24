@@ -12,13 +12,13 @@ When ``pip`` is available, the distribution can be downloaded from PyPI and inst
 
 Pip::
 
-  pip install CloudSearch-Logger
+  pip install cloudsearch-logger
 
 or you can use ``easy_install``
 
 Easy Install::
 
-  easy_install CloudSearch-Logger
+  easy_install cloudsearch-logger
 
 Manual::
 

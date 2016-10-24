@@ -3,31 +3,7 @@ Created on Oct 23, 2016
 
 @author: ahmadjaved.se@gmail.com
 """
-import pip
 from setuptools import setup, find_packages
-
-REQUIREMENTS_FILE_PATH = 'requirements.txt'
-TESTS_REQUIREMENTS_FILE_PATH = 'tests-requirements.txt'
-LINKS = []  # for repo urls (dependency_links)
-REQUIRES = []  # for package names
-TESTS_REQUIRES = []  # for package names
-
-requirements = pip.req.parse_requirements(REQUIREMENTS_FILE_PATH,
-                                          session=pip.download.PipSession())
-tests_requirements = pip.req.parse_requirements(TESTS_REQUIREMENTS_FILE_PATH,
-                                                session=pip.download.PipSession())
-
-for item in requirements:
-    if getattr(item, 'url', None):  # older pip has url
-        LINKS.append(str(item.url))
-    if getattr(item, 'link', None):  # newer pip has link
-        LINKS.append(str(item.link))
-    if item.req:
-        REQUIRES.append(str(item.req))  # always the package name
-
-for item in tests_requirements:
-    if item.req:
-        TESTS_REQUIRES.append(str(item.req))  # always the package name
 
 
 def readme():
@@ -36,7 +12,7 @@ def readme():
 
 
 setup(name='CloudSearch-Logger',
-      version='0.1',
+      version='0.2',
 
       description='Python Logger for Logging Data on Amazon CloudSearch',
       long_description=readme(),
@@ -60,11 +36,10 @@ setup(name='CloudSearch-Logger',
       license='',
       packages=find_packages(exclude=['tests*']),
 
-      install_requires=REQUIRES,
-      dependency_links=LINKS,
+      install_requires=['boto==2.42.0', 'requests'],
 
       extras_require=dict(
-          test=TESTS_REQUIRES
+          test=['mock==1.0.1', 'testscenarios==0.2', 'testtools==0.9.34']
       ),
 
       include_package_data=True,
